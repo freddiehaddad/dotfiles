@@ -1,0 +1,80 @@
+/* Nightfox theme */
+@define-color bg       rgba(18, 24, 33, 0.8);
+@define-color fg       rgba(205, 206, 207, 0.8);
+@define-color black    rgba(57, 59, 68, 0.2);
+@define-color red      rgb(201, 79, 109);
+@define-color green    rgb(129, 178, 154);
+@define-color yellow   rgba(219, 192, 116, 0.7);
+@define-color blue     rgb(113, 156, 214);
+@define-color magenta  rgb(157, 121, 214);
+@define-color cyan     rgba(99, 205, 207, 0.2);
+@define-color white    rgb(223, 223, 224);
+@define-color bblack   rgb(87, 88, 96);
+@define-color bred     rgb(209, 105, 131);
+@define-color bgreen   rgb(142, 186, 164);
+@define-color byellow  rgb(224, 201, 137);
+@define-color bblue    rgb(134, 171, 220);
+@define-color bmagenta rgb(186, 161, 226);
+@define-color bcyan    rgb(122, 213, 214);
+@define-color bwhite   rgb(228, 228, 229);
+@define-color index16  rgb(244, 162, 97);
+@define-color index17  rgb(214, 122, 210);
+
+*{
+    font-size: 14px;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: @bg;
+    border-bottom: 2px solid @cyan;
+    color: @fg;
+}
+
+#workspaces {
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-right: 10px;
+    margin-left: 3px;
+    color: @fg;
+}
+
+#workspaces button {
+    border-radius: 0;
+    margin-right: 3px;
+    padding: 1px 10px;
+    font-weight: bolder;
+    background-color: @black;
+    color: @fg;
+}
+
+#workspaces button.active, #workspaces button.focused {
+    background: @cyan;
+    color: @fg;
+}
+
+#mode {
+    font-family: "Iosevka NF";
+    margin: 3px;
+    padding: 1px 10px;
+    font-weight: bolder;
+    background: @yellow;
+    color: @bg;
+}
+
+#network,
+#pulseaudio,
+#memory,
+#disk,
+#cpu,
+#temperature,
+#clock, 
+#network {
+    font-family: "Iosevka NF";
+    padding: 0 10px;
+    color: @fg;
+}
+
+#tray {
+    padding: 0 10px;
+}

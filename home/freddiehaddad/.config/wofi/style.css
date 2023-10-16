@@ -1,0 +1,37 @@
+/* carbonfox theme */
+@define-color bg       rgba(22, 22, 22, 0.8);
+@define-color fg       rgb(242, 244, 248);
+@define-color black    rgba(40, 40, 40, 0.2);
+@define-color red      rgb(238, 83, 150);
+@define-color green    rgb(37, 190, 106);
+@define-color yellow   rgb(8, 189, 186);
+@define-color blue     rgb(120, 169, 255);
+@define-color magenta  rgb(190, 149, 255);
+@define-color cyan     rgba(51, 177, 255, 0.2);
+@define-color white    rgb(223, 223, 224);
+@define-color bblack   rgb(72, 72, 72);
+@define-color bred     rgb(241, 109, 166);
+@define-color bgreen   rgb(70, 200, 128);
+@define-color byellow  rgb(45, 199, 196);
+@define-color bblue    rgb(140, 182, 255);
+@define-color bmagenta rgb(200, 165, 255);
+@define-color bcyan    rgb(82, 189, 255);
+@define-color bwhite   rgb(228, 228, 229);
+@define-color index16  rgb(61, 219, 217);
+@define-color index17  rgb(255, 126, 182);
+
+#entry:selected {
+	background-color: @cyan;
+}
+
+#img {
+	padding: 5px;
+}
+
+#text {
+	color: @fg;
+}
+
+#window {
+	background-color: @bg;
+}

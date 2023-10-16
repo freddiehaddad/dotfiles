@@ -1,0 +1,10 @@
+allow_images=true
+gtk_dark=true
+hide_search=true
+image_size=24
+insensitive=true
+layer=overlay
+line_wrap=word
+prompt=
+show=drun
+width=500px
