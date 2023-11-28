@@ -86,5 +86,31 @@ makepkg --clean --cleanbuild --install --needed --rmdeps --syncdeps
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 
+### Zoom (AUR)
+
+Install Zoom and dependencies:
+
+```text
+pacman -S --needed pipewire-v4l2 qt5-wayland xdg-desktop-portal \
+                   xdg-desktop-portal-wlr
+git clone https://aur.archlinux.org/zoom.git $HOME/projects/git
+cd $HOME/projects/git/zoom
+makepkg --clean --cleanbuild --install --needed --rmdeps --syncdeps
+```
+
+After first launch `$HOME/.config/zoomus.conf` will exist. Edit the file and set
+the following values:
+
+```text
+enableWaylandShare=true
+xwayland=false
+```
+
+Modify the `Exec=` line in `/usr/share/applications/Zoom.desktop`:
+
+```text
+Exec=env XDG_CURRENT_DESKTOP=GNOME QT_QPA_PLATFORM=wayland /usr/bin/zoom %U
+```
+
 [openal]: https://gitlab.com/OpenRGBDevelopers/OpenRGBEffectsPlugin#linux
 [volantes]: https://www.gnome-look.org/p/1356095
