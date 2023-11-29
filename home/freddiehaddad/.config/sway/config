@@ -210,6 +210,7 @@ for_window [app_id="^openrgb$"] floating enable
 for_window [title="^Library$" app_id="^firefox$"] floating enable
 for_window [title="^About Mozilla Firefox$" app_id="^firefox$"] floating enable
 for_window [app_id="^firefox$"] resize set width 1280 px
+for_window [app_id="^Zoom$"] floating enable
 
 #80: con "Path of Exile" (xwayland, pid: 174528, instance: "steam_app_238960", class: "steam_app_238960", X11 window: 0x4E00001)
 for_window [class="^steam_app_238960$"] fullscreen enable
