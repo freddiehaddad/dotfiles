@@ -203,7 +203,7 @@ exec foot
 exec firefox
 
 # Set floating windows
-for_window [class="^1Password$"] floating enable
+for_window [class="^1Password$"] floating enable; resize set 1000px 800px; move position 4110 0;
 for_window [app_id="^pavucontrol$"] floating enable
 for_window [class="^steam$"] floating enable
 for_window [app_id="^openrgb$"] floating enable
