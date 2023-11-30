@@ -86,6 +86,12 @@ makepkg --clean --cleanbuild --install --needed --rmdeps --syncdeps
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 
+### Awesome WM
+
+```text
+pacman -S --needed awesome xorg xsel xcompmgr
+```
+
 ### Zoom (AUR)
 
 Install Zoom and dependencies:

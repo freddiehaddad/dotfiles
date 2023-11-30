@@ -1,17 +1,22 @@
-# Sway
-if [ -z "${WAYLAND_DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+# Awesome/Sway
+if [ -z "${DISPLAY}" ] && [ -z "${WAYLAND_DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
 	# XDG
-	export XDG_SESSION_DESKTOP="sway"
-	export XDG_CURRENT_DESKTOP="sway"
+	# export XDG_SESSION_DESKTOP="sway"
+	# export XDG_CURRENT_DESKTOP="sway"
+	export XDG_SESSION_DESKTOP="awesome"
+	export XDG_CURRENT_DESKTOP="awesome"
 
 	# Firefox
-	export MOZ_ENABLE_WAYLAND=1
+	# export MOZ_ENABLE_WAYLAND=1
 
 	# QT
 	#export QT_QPA_PLATFORM="wayland"
 
 	# Start Sway
-	exec systemd-cat --identifier=sway sway
+	# exec systemd-cat --identifier=sway sway
+
+	# Start Awesome WM
+	exec systemd-cat --identifier=awesome startx /usr/bin/awesome
 fi
 
 # GPG Signing Key for GitHub
