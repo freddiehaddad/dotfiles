@@ -54,7 +54,7 @@ window#waybar {
 }
 
 #mode {
-    font-family: "Iosevka NF";
+    font-family: "Iosevka Term Nerd Font";
     margin: 3px;
     padding: 1px 10px;
     font-weight: bolder;
@@ -70,7 +70,7 @@ window#waybar {
 #temperature,
 #clock, 
 #network {
-    font-family: "Iosevka NF";
+    font-family: "Iosevka Term Nerd Font";
     padding: 0 10px;
     color: @fg;
 }
