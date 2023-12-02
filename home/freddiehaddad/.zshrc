@@ -1,8 +1,8 @@
-# Hyprland
-if [ -z "${WAYLAND_DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-	# Start Hyprland
+# Start GUI
+if [ -z "${DISPLAY}" ] && [ -z "${WAYLAND_DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
 	# exec systemd-cat --identifier=hyprland Hyprland
-	# exec systemd-cat --identifier=awesome startx /usr/bin/awesome
+	# exec systemd-cat --identifier=sway sway
+	exec systemd-cat --identifier=awesome startx /usr/bin/awesome
 fi
 
 # GPG Signing Key for GitHub

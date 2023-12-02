@@ -157,7 +157,7 @@ awful.screen.connect_for_each_screen(function(s)
 	set_wallpaper(s)
 
 	-- Each screen has its own tag table.
-	awful.tag({ 'tmux', 'firefox', 'scratch', 'zoom' }, s, awful.layout.layouts[1])
+	awful.tag({ 'coding', 'web', 'scratch', 'zoom' }, s, awful.layout.layouts[1])
 
 	-- Create a promptbox for each screen
 	s.mypromptbox = awful.widget.prompt()
@@ -379,8 +379,7 @@ awful.rules.rules = {
 	{
 		rule_any = {
 			class = {
-				'Arandr',
-				'steam',
+				'openrgb',
 				'zoom',
 				'1Password',
 			},
@@ -395,11 +394,20 @@ awful.rules.rules = {
 		properties = { floating = true },
 	},
 
+	-- Popup windows.
+	{
+		rule = {
+			class = 'firefox',
+			name = 'Library',
+		},
+		properties = { floating = true },
+	},
+
 	-- Add titlebars to normal clients and dialogs
-	-- {
-	-- 	rule_any = { type = { "normal", "dialog" } },
-	-- 	properties = { titlebars_enabled = false },
-	-- },
+	{
+		rule_any = { type = { 'normal', 'dialog' } },
+		properties = { titlebars_enabled = false },
+	},
 
 	-- Set Firefox to always map on the tag named "2" on screen 1.
 	-- { rule = { class = "Firefox" },
