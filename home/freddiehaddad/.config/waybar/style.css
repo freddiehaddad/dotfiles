@@ -1,5 +1,5 @@
 /* Nightfox theme */
-@define-color bg       rgba(18, 24, 33, 0.8);
+@define-color bg       rgba(18, 24, 33, 0.98);
 @define-color fg       rgba(205, 206, 207, 0.8);
 @define-color black    rgba(57, 59, 68, 0.2);
 @define-color red      rgb(201, 79, 109);
@@ -8,6 +8,7 @@
 @define-color blue     rgb(113, 156, 214);
 @define-color magenta  rgb(157, 121, 214);
 @define-color cyan     rgba(99, 205, 207, 0.2);
+@define-color cyanh    rgba(99, 205, 207, 0.4);
 @define-color white    rgb(223, 223, 224);
 @define-color bblack   rgb(87, 88, 96);
 @define-color bred     rgb(209, 105, 131);
@@ -32,34 +33,48 @@ window#waybar {
 }
 
 #workspaces {
-    margin-top: 3px;
+    margin-top: 2px;
     margin-bottom: 3px;
-    margin-right: 10px;
     margin-left: 3px;
     color: @fg;
+    background-color: @bg;
 }
 
 #workspaces button {
     border-radius: 0;
-    margin-right: 3px;
-    padding: 1px 10px;
-    font-weight: bolder;
-    background-color: @black;
-    color: @fg;
 }
 
-#workspaces button.active, #workspaces button.focused {
+#workspaces button.active {
+    color: @fg;
     background: @cyan;
-    color: @fg;
 }
 
-#mode {
-    font-family: "Iosevka Term Nerd Font";
-    margin: 3px;
-    padding: 1px 10px;
-    font-weight: bolder;
-    background: @yellow;
-    color: @bg;
+#workspaces button.active:hover {
+    border-color: @cyanh;
+    box-shadow: none; 
+    background: @cyanh;
+}
+
+#workspaces button.empty:hover {
+    color: @fg;
+    border-color: @cyanh;
+    box-shadow: none; 
+    background: @cyanh;
+    text-shadow: unset;
+}
+
+#workspaces button.persistent:hover {
+    color: @fg;
+    border-color: @cyanh;
+    box-shadow: none; 
+    background: @cyanh;
+    text-shadow: unset;
+}
+
+#workspaces button.visible:hover {
+    border-color: @cyanh;
+    box-shadow: none; 
+    background: @cyanh;
 }
 
 #network,
@@ -68,13 +83,14 @@ window#waybar {
 #disk,
 #cpu,
 #temperature,
+#temperature.gpu,
 #clock, 
 #network {
     font-family: "Iosevka Term Nerd Font";
-    padding: 0 10px;
+    padding: 0 6px;
     color: @fg;
 }
 
 #tray {
-    padding: 0 10px;
+    padding: 0 6px;
 }
