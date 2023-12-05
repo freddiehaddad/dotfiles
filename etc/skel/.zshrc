@@ -16,6 +16,12 @@ HISTFILE="$HOME/.history"
 HISTSIZE=10000
 SAVEHIST=10000
 
+# Fix directory colors
+FILE="$HOME/.config/dircolors"
+if [ -f "$FILE" ]; then
+	eval "$(dircolors -b $FILE)"
+fi
+
 # Enable local bin
 FILE="$HOME/.local/bin"
 if [ -d "$FILE" ]; then
