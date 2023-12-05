@@ -67,8 +67,7 @@
         "hwmon-path-abs": "/sys/devices/pci0000:00/0000:00:01.0/0000:01:00.0/0000:02:00.0/0000:03:00.0/hwmon",
         "input-filename": "temp1_input",
         "critical-threshold": 90,
-        "format-critical": "{temperatureC}°C {icon}",
-        "format": "{temperatureC}°C {icon}",
+        "format": "GPU {temperatureC}°C {icon}",
         "format-icons": ["", "", "", "", ""],
 	"tooltip-format": "AMD RX 7900XTX"
     },
