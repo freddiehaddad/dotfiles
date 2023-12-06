@@ -10,16 +10,22 @@ local gfs = require('gears.filesystem')
 local themes_path = gfs.get_themes_dir()
 local themes_path_overrides = gfs.get_configuration_dir()
 
+local palette = require('palette')
+
 local theme = {}
 
 theme.font = 'IosevkaTerm Nerd Font Mono 10.5'
+theme.hotkeys_font = 'IosevkaTerm Nerd Font Mono 12.5'
+theme.hotkeys_description_font = theme.hotkeys_font
+theme.hotkeys_border_width = dpi(1)
+theme.hotkeys_border_color = palette.blue.base
 
 -- Colors (Nightfox)
-theme.bg_normal = '#121821'
-theme.bg_focus = '#29394f'
-theme.bg_urgent = '#c94f6d'
-theme.bg_minimize = '#393b44'
-theme.bg_systray = theme.bg_normal
+theme.bg_normal = palette.bg0
+theme.bg_focus = palette.bg1
+theme.bg_urgent = palette.red.base
+theme.bg_minimize = palette.orange.base
+theme.bg_systray = theme.bg0
 
 theme.fg_normal = '#cdcecf'
 theme.fg_focus = '#cdcecf'
@@ -29,7 +35,7 @@ theme.fg_minimize = '#393b44'
 theme.useless_gap = dpi(1)
 theme.border_width = dpi(1)
 theme.border_normal = '#393b44'
-theme.border_focus = '#719cd6'
+theme.border_focus = palette.blue.base
 theme.border_marked = '#dbc074'
 
 -- There are other variable sets
@@ -116,7 +122,7 @@ theme.layout_cornersw = themes_path .. 'default/layouts/cornersww.png'
 theme.layout_cornerse = themes_path .. 'default/layouts/cornersew.png'
 
 -- Generate Awesome icon:
-theme.awesome_icon = theme_assets.awesome_icon(theme.menu_height, theme.bg_focus, theme.fg_focus)
+theme.awesome_icon = theme_assets.awesome_icon(theme.menu_height, palette.blue.dim, palette.bg0)
 
 -- Define the icon theme for application icons. If not set then the icons
 -- from /usr/share/icons and /usr/share/icons/hicolor will be used.
