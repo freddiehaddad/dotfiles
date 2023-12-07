@@ -446,10 +446,14 @@ client.connect_signal('unfocus', function(c) c.border_color = beautiful.border_n
 -- }}}
 
 -- Startup Applications
-for app, args in pairs({
-	['xcompmgr'] = '', -- xcompmgr -c -l0 -t0 -r0 -o.00
-	['openrgb'] = '--startminimized',
-	['1password'] = '',
+
+for app, opts in pairs({
+	['xcompmgr'] = {}, -- xcompmgr -c -l0 -t0 -r0 -o.00
+	['1password'] = {},
+	['openrgb'] = { args = '--startminimized' },
+	['firefox'] = {},
+	['alacritty'] = {},
 }) do
+	local args = opts.args or ''
 	awful.spawn.with_shell(string.format('pgrep %s || %s %s', app, app, args))
 end
