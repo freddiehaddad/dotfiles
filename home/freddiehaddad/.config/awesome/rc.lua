@@ -363,6 +363,12 @@ awful.rules.rules = {
 		properties = { floating = true, placement = awful.placement.centered },
 	},
 
+	-- Zoom
+	{
+		rule = { class = 'zoom' },
+		properties = { floating = true, placement = awful.placement.centered },
+	},
+
 	-- 1Password
 	{
 		rule = { class = '1Password' },
