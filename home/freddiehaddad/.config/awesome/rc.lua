@@ -132,6 +132,8 @@ awful.screen.connect_for_each_screen(function(s)
 	-- Each screen has its own tag table.
 	awful.tag({ '1', '2', '3', '4' }, s, awful.layout.layouts[1])
 
+	s.tags[1].master_width_factor = 0.73
+
 	-- Create a promptbox for each screen
 	s.mypromptbox = awful.widget.prompt()
 	-- Create an imagebox widget which will contain an icon indicating which layout we're using.
@@ -432,14 +434,11 @@ client.connect_signal('request::titlebars', function(c)
 	})
 end)
 
--- Enable sloppy focus, so that focus follows mouse.
--- client.connect_signal('mouse::enter', function(c) c:emit_signal('request::activate', 'mouse_enter', { raise = false }) end)
 client.connect_signal('focus', function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal('unfocus', function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
 -- Startup Applications
-
 for app, opts in pairs({
 	['xcompmgr'] = {}, -- xcompmgr -c -l0 -t0 -r0 -o.00
 	['1password'] = {},
