@@ -380,7 +380,11 @@ awful.rules.rules = {
 
 	-- Dialogs, Popups, Open, Save, ...
 	{
-		rule = { name = 'Library' },
+		rule = { class = 'firefox', name = 'Library' },
+		properties = { floating = true, placement = awful.placement.centered },
+	},
+	{
+		rule = { class = 'firefox', name = 'About Mozilla Firefox' },
 		properties = { floating = true, placement = awful.placement.centered },
 	},
 }
