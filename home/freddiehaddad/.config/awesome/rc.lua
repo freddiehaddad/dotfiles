@@ -191,18 +191,15 @@ local globalkeys = gears.table.join(
 	awful.key({ modkey, 'Control' }, 'k', function() awful.client.focus.bydirection('up') end, { description = 'focus next above', group = 'client' }),
 	awful.key({ modkey, 'Control' }, 'l', function() awful.client.focus.bydirection('right') end, { description = 'focus next right', group = 'client' }),
 
+	-- window cycling
+	awful.key({ modkey, 'Control' }, 'n', function() awful.client.focus.byidx(1) end, { description = 'focus next', group = 'client' }),
+	awful.key({ modkey, 'Control' }, 'p', function() awful.client.focus.byidx(-1) end, { description = 'focus previous', group = 'client' }),
+
 	-- window movement
 	awful.key({ modkey, 'Shift' }, 'h', function() awful.client.swap.bydirection('left') end, { description = 'swap with left client ', group = 'client' }),
 	awful.key({ modkey, 'Shift' }, 'j', function() awful.client.swap.bydirection('down') end, { description = 'swap with lower client', group = 'client' }),
 	awful.key({ modkey, 'Shift' }, 'k', function() awful.client.swap.bydirection('up') end, { description = 'swap with upper client', group = 'client' }),
 	awful.key({ modkey, 'Shift' }, 'l', function() awful.client.swap.bydirection('right') end, { description = 'swap with right client', group = 'client' }),
-
-	-- window minimize/maximize
-	awful.key({ modkey, 'Control' }, 'n', function()
-		local c = awful.client.restore()
-		-- Focus restored client
-		if c then c:emit_signal('request::activate', 'key.unminimize', { raise = true }) end
-	end, { description = 'restore minimized', group = 'client' }),
 
 	-- tag naviagation
 	awful.key({ modkey }, '1', function()
