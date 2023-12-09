@@ -18,6 +18,9 @@ local hotkeys_popup = require('awful.hotkeys_popup')
 -- when client with a matching name is opened:
 require('awful.hotkeys_popup.keys')
 
+local palette = require('palette')
+local cpu_widget = require('widgets.cpu')
+
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -168,6 +171,13 @@ awful.screen.connect_for_each_screen(function(s)
 		s.mytasklist, -- Middle widget
 		{ -- Right widgets
 			layout = wibox.layout.fixed.horizontal,
+			cpu_widget({
+				green = palette.green.base,
+				yellow = palette.yellow.base,
+				red = palette.red.base,
+				background_color = palette.bg0,
+				width = 100,
+			}),
 			mytextclock,
 			wibox.widget.systray(),
 			s.mylayoutbox,
