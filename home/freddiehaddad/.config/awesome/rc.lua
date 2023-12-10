@@ -454,7 +454,7 @@ client.connect_signal('unfocus', function(c) c.border_color = beautiful.border_n
 -- Startup Applications
 for app, opts in pairs({
 	['picom'] = {}, -- ~/.config/picom/picom.conf (see: /usr/share/doc/picom/picom.conf.example)
-	-- ['xcompmgr'] = { args = '-- xcompmgr -c -l0 -t0 -r0 -o.00' },
+	-- ['xcompmgr'] = { args = '-- xcompmgr -f -n -c -l0 -t0 -r0 -o.00' },
 	['1password'] = {},
 	['openrgb'] = { args = '--startminimized' },
 	['firefox'] = {},
