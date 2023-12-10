@@ -122,7 +122,7 @@ if (( $+commands[starship] )); then
 fi
 
 # Display splash
-if (( $+commands[fastfetch] )); then
+if (( $+commands[fastfetch] )) && [ -z "$TMUX" ]; then
 	fastfetch
 fi
 
