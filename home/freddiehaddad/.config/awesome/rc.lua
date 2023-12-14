@@ -382,6 +382,18 @@ awful.rules.rules = {
 		properties = { floating = true, placement = awful.placement.top_right },
 	},
 
+	-- EasyEffects
+	{
+		rule = { class = 'easyeffects' },
+		properties = { floating = true },
+	},
+
+	-- Pavucontrol
+	{
+		rule = { class = 'Pavucontrol' },
+		properties = { floating = true },
+	},
+
 	-- Dialogs, Popups, Open, Save, ...
 	{
 		rule = { class = 'firefox', name = 'Library' },
