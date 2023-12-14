@@ -36,8 +36,9 @@ sytemctl start systemd-resolved.service
 ### CUPS
 
 ```text
-pacman -S --needed cups avahi
+pacman -S --needed cups cups-browsed avahi nss-mdns
 cp -r etc/systemd/resolved.conf.d /etc/systemd
+cp etc/nsswitch.conf /etc
 systemctl restart systemd-resolved.service
 systemctl enable avahi-daemon.service
 systemctl start avahi-daemon.service
