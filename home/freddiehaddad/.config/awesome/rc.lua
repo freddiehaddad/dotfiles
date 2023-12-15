@@ -20,6 +20,7 @@ require('awful.hotkeys_popup.keys')
 
 local palette = require('palette')
 local cpu_widget = require('widgets.cpu')
+local net_widget = require('widgets.net')
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -171,6 +172,23 @@ awful.screen.connect_for_each_screen(function(s)
 		s.mytasklist, -- Middle widget
 		{ -- Right widgets
 			layout = wibox.layout.fixed.horizontal,
+			net_widget({
+				mode = 'rx',
+				slow = palette.green.dim,
+				medium = palette.green.base,
+				fast = palette.green.bright,
+				background_color = palette.bg0,
+				width = 100,
+			}),
+			net_widget({
+				max = 50,
+				mode = 'tx',
+				slow = palette.green.dim,
+				medium = palette.green.base,
+				fast = palette.green.bright,
+				background_color = palette.bg0,
+				width = 100,
+			}),
 			cpu_widget({
 				green = palette.green.base,
 				yellow = palette.yellow.base,
