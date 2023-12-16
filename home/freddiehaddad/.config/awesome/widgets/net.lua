@@ -65,8 +65,8 @@ local function worker(user_args)
 
 	local mode = args.mode or 'rx'
 	local width = args.width or 50
-	local step_width = args.step_width or 2
-	local step_spacing = args.step_spacing or 1
+	local step_width = args.step_width or 5
+	local step_spacing = args.step_spacing or 2
 	local slow = args.slow or beautiful.fg_normal
 	local medium = args.medium or '#FFFF00'
 	local fast = args.fast or '#FF0000'
@@ -80,7 +80,12 @@ local function worker(user_args)
 		step_width = step_width,
 		step_spacing = step_spacing,
 		widget = wibox.widget.graph,
-		color = 'linear:0,0:0,20:0,' .. fast .. ':0.3,' .. medium .. ':0.6,' .. slow,
+		color = {
+			type = 'linear',
+			from = { 0, 0 },
+			to = { 0, 30 },
+			stops = { { 0, fast }, { 0.05, fast }, { 0.1, medium }, { 0.3, medium }, { 0.35, slow }, { 1, slow } },
+		},
 	})
 
 	--- By default graph widget goes from left to right, so we mirror it and push up a bit

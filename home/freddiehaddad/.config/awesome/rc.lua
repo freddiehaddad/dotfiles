@@ -172,6 +172,14 @@ awful.screen.connect_for_each_screen(function(s)
 		s.mytasklist, -- Middle widget
 		{ -- Right widgets
 			layout = wibox.layout.fixed.horizontal,
+			wibox.widget({
+				markup = ' 󰈀 ',
+				widget = wibox.widget.textbox,
+			}),
+			wibox.widget({
+				markup = '  ',
+				widget = wibox.widget.textbox,
+			}),
 			net_widget({
 				mode = 'rx',
 				slow = palette.green.dim,
@@ -180,8 +188,12 @@ awful.screen.connect_for_each_screen(function(s)
 				background_color = palette.bg0,
 				width = 100,
 			}),
+			wibox.widget({
+				markup = '  ',
+				widget = wibox.widget.textbox,
+			}),
 			net_widget({
-				max = 50,
+				max = 40,
 				mode = 'tx',
 				slow = palette.green.dim,
 				medium = palette.green.base,
@@ -189,10 +201,14 @@ awful.screen.connect_for_each_screen(function(s)
 				background_color = palette.bg0,
 				width = 100,
 			}),
+			wibox.widget({
+				markup = ' 󰻠 ',
+				widget = wibox.widget.textbox,
+			}),
 			cpu_widget({
-				green = palette.green.base,
-				yellow = palette.yellow.base,
-				red = palette.red.base,
+				green = palette.green.dim,
+				yellow = palette.yellow.dim,
+				red = palette.red.dim,
 				background_color = palette.bg0,
 				width = 100,
 			}),
@@ -493,3 +509,14 @@ for app, opts in pairs({
 	local args = opts.args or ''
 	awful.spawn.with_shell(string.format('pgrep %s || %s %s', app, app, args))
 end
+
+-- Make dialogue and other transient windows center to the parent
+client.connect_signal('manage', function(c)
+    -- Center dialogs over parent
+    if c.transient_for then
+        awful.placement.centered(c, {
+            parent = c.transient_for
+        })
+        awful.placement.no_offscreen(c)
+    end
+end)
