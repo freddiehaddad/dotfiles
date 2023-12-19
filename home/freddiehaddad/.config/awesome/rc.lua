@@ -187,6 +187,7 @@ awful.screen.connect_for_each_screen(function(s)
 				fast = palette.green.bright,
 				background_color = palette.bg0,
 				width = 100,
+				height = s.mywibox.height,
 			}),
 			wibox.widget({
 				markup = '  ',
@@ -200,6 +201,7 @@ awful.screen.connect_for_each_screen(function(s)
 				fast = palette.green.bright,
 				background_color = palette.bg0,
 				width = 100,
+				height = s.mywibox.height,
 			}),
 			wibox.widget({
 				markup = ' 󰻠 ',
@@ -211,6 +213,7 @@ awful.screen.connect_for_each_screen(function(s)
 				red = palette.red.dim,
 				background_color = palette.bg0,
 				width = 100,
+				height = s.mywibox.height,
 			}),
 			mytextclock,
 			wibox.widget.systray(),

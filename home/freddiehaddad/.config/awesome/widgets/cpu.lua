@@ -82,6 +82,7 @@ local function worker(user_args)
 	local args = user_args or {}
 
 	local width = args.width or 50
+	local height = args.height or 30
 	local step_width = args.step_width or 5
 	local step_spacing = args.step_spacing or 2
 	local green = args.green or beautiful.fg_normal
@@ -101,9 +102,9 @@ local function worker(user_args)
 		widget = wibox.widget.graph,
 		color = {
 			type = 'linear',
-			from = { 0, 0 },
-			to = { 0, 30 },
-			stops = { { 0, red }, { 0.05, red }, { 0.1, yellow }, { 0.3, yellow }, { 0.35, green }, { 1, green } },
+			from = { 0, height },
+			to = { 0, 0 },
+			stops = { { 0.00, green }, { 0.50, green }, { 0.70, yellow }, { 0.85, red } },
 		},
 	})
 

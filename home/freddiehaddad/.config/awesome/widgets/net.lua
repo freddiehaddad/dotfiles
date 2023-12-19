@@ -65,6 +65,7 @@ local function worker(user_args)
 
 	local mode = args.mode or 'rx'
 	local width = args.width or 50
+	local height = args.height or 30
 	local step_width = args.step_width or 5
 	local step_spacing = args.step_spacing or 2
 	local slow = args.slow or beautiful.fg_normal
@@ -82,9 +83,9 @@ local function worker(user_args)
 		widget = wibox.widget.graph,
 		color = {
 			type = 'linear',
-			from = { 0, 0 },
-			to = { 0, 30 },
-			stops = { { 0, fast }, { 0.05, fast }, { 0.1, medium }, { 0.3, medium }, { 0.35, slow }, { 1, slow } },
+			from = { 0, height },
+			to = { 0, 0 },
+			stops = { { 0.00, slow }, { 0.50, slow }, { 0.70, medium }, { 0.85, fast } },
 		},
 	})
 
