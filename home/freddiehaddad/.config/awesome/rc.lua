@@ -328,7 +328,21 @@ local globalkeys = gears.table.join(
 
 	-- awesome controls
 	awful.key({ modkey, 'Control', 'Shift' }, 'r', awesome.restart, { description = 'reload awesome', group = 'awesome' }),
-	awful.key({ modkey, 'Control', 'Shift' }, 'q', awesome.quit, { description = 'quit awesome', group = 'awesome' })
+	awful.key({ modkey, 'Control', 'Shift' }, 'q', awesome.quit, { description = 'quit awesome', group = 'awesome' }),
+
+	-- screenshots
+	awful.key(
+		{},
+		'Print',
+		function() awful.util.spawn_with_shell('import -window root "$HOME/documents/pictures/screenshots/$(date "+%Y%m%d-%H%M%S").png"') end,
+		{ description = 'Screenshot (entire screen)', group = 'screenshot' }
+	),
+	awful.key(
+		{ 'Shift' },
+		'Print',
+		function() awful.util.spawn_with_shell('sleep 3; import "$HOME/documents/pictures/screenshots/$(date "+%Y%m%d-%H%M%S").png"') end,
+		{ description = 'Screenshot (selection)', group = 'screenshot' }
+	)
 )
 
 local clientkeys = gears.table.join(
@@ -515,11 +529,11 @@ end
 
 -- Make dialogue and other transient windows center to the parent
 client.connect_signal('manage', function(c)
-    -- Center dialogs over parent
-    if c.transient_for then
-        awful.placement.centered(c, {
-            parent = c.transient_for
-        })
-        awful.placement.no_offscreen(c)
-    end
+	-- Center dialogs over parent
+	if c.transient_for then
+		awful.placement.centered(c, {
+			parent = c.transient_for,
+		})
+		awful.placement.no_offscreen(c)
+	end
 end)
