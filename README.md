@@ -9,6 +9,17 @@ are relative to the root.
 Some additional tweaking is required for some settings. They are detailed in
 below.
 
+### Systemd Boot
+
+Modify the `fmask` and `dmask' values in `/etc/fstab\` for the `/boot` device to
+address the:
+
+> ...the random seed file is world accessible, which is a security hole!
+
+```text
+...fmask=0077,dmask=0077...
+```
+
 ### Mouse Cursor
 
 Download the [Volantes] cursors, uncompress, and install.
