@@ -90,7 +90,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ### Awesome WM
 
 ```text
-pacman -S --needed awesome xorg xsel xcompmgr
+pacman -S --needed awesome xorg xsel picom adriconf
 ```
 
 ### Zoom (AUR)
