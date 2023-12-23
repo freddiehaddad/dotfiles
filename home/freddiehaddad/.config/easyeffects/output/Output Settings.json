@@ -7,7 +7,7 @@
             "output-gain": 0.0,
             "reference": "Geometric Mean (MSI)",
             "silence-threshold": -70.0,
-            "target": -4.999999999999941
+            "target": -15.999999999999902
         },
         "blocklist": [],
         "plugins_order": [
