@@ -434,16 +434,16 @@ awful.rules.rules = {
 	},
 
 	-- EasyEffects
-	{
-		rule = { class = 'easyeffects' },
-		properties = { floating = true },
-	},
+	-- {
+	-- 	rule = { class = 'easyeffects' },
+	-- 	properties = { floating = true },
+	-- },
 
 	-- Pavucontrol
-	{
-		rule = { class = 'Pavucontrol' },
-		properties = { floating = true },
-	},
+	-- {
+	-- 	rule = { class = 'Pavucontrol' },
+	-- 	properties = { floating = true },
+	-- },
 
 	-- Dialogs, Popups, Open, Save, ...
 	{
