@@ -1,0 +1,53 @@
+[[colors.indexed_colors]]
+color = "#f4a261"
+index = 16
+
+[[colors.indexed_colors]]
+color = "#d67ad2"
+index = 17
+
+[colors.bright]
+black = "#575860"
+blue = "#86abdc"
+cyan = "#7ad5d6"
+green = "#8ebaa4"
+magenta = "#baa1e2"
+red = "#d16983"
+white = "#e4e4e5"
+yellow = "#e0c989"
+
+[colors.normal]
+black = "#393b44"
+blue = "#719cd6"
+cyan = "#63cdcf"
+green = "#81b29a"
+magenta = "#9d79d6"
+red = "#c94f6d"
+white = "#dfdfe0"
+yellow = "#dbc074"
+
+[colors.primary]
+background = "#121821"
+foreground = "#cdcecf"
+
+[font]
+size = 12
+
+[font.bold]
+family = "IosevkaTerm Nerd Font Mono"
+style = "SemiBold"
+
+[font.bold_italic]
+family = "IosevkaTerm Nerd Font Mono"
+style = "SemiBold"
+
+[font.italic]
+family = "IosevkaTerm Nerd Font Mono"
+style = "Regular"
+
+[font.normal]
+family = "IosevkaTerm Nerd Font Mono"
+style = "Regular"
+
+[window]
+opacity = 0.98
