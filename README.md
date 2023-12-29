@@ -67,6 +67,7 @@ systemctl start fstrim.timer
 ### Package Cache Clean
 
 ```text
+pacman -S --needed pacman-contrib
 systemctl enable paccache.timer
 systemctl start paccache.timer
 ```
@@ -101,7 +102,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ### Awesome WM
 
 ```text
-pacman -S --needed awesome xorg xsel picom adriconf
+pacman -S --needed awesome xorg xorg-xinit xsel picom adriconf
 ```
 
 ### Zoom (AUR)
