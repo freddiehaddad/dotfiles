@@ -517,15 +517,26 @@ client.connect_signal('unfocus', function(c) c.border_color = beautiful.border_n
 -- Startup Applications
 for app, opts in pairs({
 	['picom'] = {}, -- ~/.config/picom/picom.conf (see: /usr/share/doc/picom/picom.conf.example)
-	-- ['xcompmgr'] = { args = '-- xcompmgr -f -n -c -l0 -t0 -r0 -o.00' },
-	['easyeffects'] = { args = '--gapplication-service' },
+	--['xcompmgr'] = { args = '-- xcompmgr -f -n -c -l0 -t0 -r0 -o.00' },
+	--['easyeffects'] = { args = '--gapplication-service' },
 	['1password'] = {},
-	['openrgb'] = { args = '--startminimized' },
+	--['openrgb'] = { args = '--startminimized' },
 	['firefox'] = {},
 	['alacritty'] = {},
 }) do
 	local args = opts.args or ''
 	awful.spawn.with_shell(string.format('pgrep %s || %s %s', app, app, args))
+end
+
+-- requries dex to be installed
+local xresources_name = 'awesome.started'
+local xresources = awful.util.pread('xrdb -query')
+if not xresources:match(xresources_name) then
+	awful.util.spawn_with_shell('xrdb -merge <<< ' .. "'" .. xresources_name .. ":true'")
+	-- Execute once for X server
+	-- TODO: Set XDG_CONFIG_HOME
+	--os.execute("dex --environment Awesome --autostart --search-paths $XDG_CONFIG_HOME/autostart")
+	awful.util.spawn_with_shell('dex --environment Awesome --autostart --search-paths $HOME/.config/autostart')
 end
 
 -- Make dialogue and other transient windows center to the parent
