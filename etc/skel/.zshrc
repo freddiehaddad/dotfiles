@@ -72,9 +72,10 @@ if (( $+commands[lsd] )); then
 	else
 		alias ls="lsd --icon never"
 	fi
-	alias ll="ls -l"
-	alias lla="ll -a"
 fi
+
+alias ll="ls -l"
+alias lla="ll -a"
 
 # Better cat
 if (( $+commands[bat] )); then
