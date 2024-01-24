@@ -35,6 +35,12 @@ if [ -d "$FILE" ]; then
 	PATH="$FILE:$PATH"
 fi
 
+# Enable go bin
+FILE="$HOME/go/bin"
+if [ -d "$FILE" ]; then
+	PATH="$FILE:$PATH"
+fi
+
 # Arch specific
 if (( $+commands[pacdiff] )); then
 	export DIFFPROG="nvim -d"
