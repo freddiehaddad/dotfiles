@@ -520,7 +520,7 @@ for app, opts in pairs({
 	--['xcompmgr'] = { args = '-- xcompmgr -f -n -c -l0 -t0 -r0 -o.00' },
 	['easyeffects'] = { args = '--gapplication-service' },
 	['1password'] = {},
-	--['openrgb'] = { args = '--startminimized' },
+	['openrgb'] = { args = '--startminimized' },
 	['firefox'] = {},
 	['alacritty'] = {},
 }) do
